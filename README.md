@@ -108,6 +108,20 @@ The app includes placeholder for Google Maps API. To enable maps:
 - Images use Unsplash placeholders (can be replaced with actual images)
 - The app is fully responsive and mobile-friendly
 
+## Tech stack
+- Frontend: React / Next (Cursor prototype)
+- No-code / future: Bubble (mobile) / Framer (marketing)
+- Data & hosting: planned Supabase/Airtable + Vercel for deployment
+- AI: Cursor prompts & prototype prompts documented in `PROMPTS.md`
+
+---
+
+## How to run locally
+```bash
+npm install
+npm run dev        # development server at http://localhost:3000
+npm run build      # production build
+
 ## License
 
 Copyright © 2025 Shreeya Galagali. All Rights Reserved.
