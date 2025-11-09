@@ -110,7 +110,13 @@ The app includes placeholder for Google Maps API. To enable maps:
 
 ## License
 
-This project is open source and available under the MIT License.
+Copyright © 2025 Shreeya Galagali. All Rights Reserved.
+
+This website, its design, and content are the exclusive property of Shreeya Galagali.
+No part of this project may be reproduced, distributed, or transmitted in any form or by any means,
+including copying, modification, or commercial use, without the prior written permission of the owner.
+
+For permissions or collaborations, please contact: shreeyagalgali2@gmail.com
 
 
 
