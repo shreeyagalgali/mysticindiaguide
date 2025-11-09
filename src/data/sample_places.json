@@ -1,0 +1,242 @@
+{
+  "Rajasthan": {
+    "localLife": {
+      "Shopping": [
+        {
+          "id": 1,
+          "title": "Jaipur Bazaars",
+          "description": "Explore the vibrant markets of Jaipur, known for textiles, jewelry, and handicrafts.",
+          "image": "https://images.unsplash.com/photo-1590736969955-71cc94901144?w=400&h=300&fit=crop",
+          "location": "Jaipur, Rajasthan",
+          "lat": 26.9124,
+          "lng": 75.7873
+        },
+        {
+          "id": 2,
+          "title": "Udaipur Markets",
+          "description": "Beautiful markets offering traditional Rajasthani crafts and local specialties.",
+          "image": "https://images.unsplash.com/photo-1472851294608-062f824d29cc?w=400&h=300&fit=crop",
+          "location": "Udaipur, Rajasthan",
+          "lat": 24.5854,
+          "lng": 73.7125
+        }
+      ],
+      "Street Foods": [
+        {
+          "id": 1,
+          "title": "Pyaaz Kachori",
+          "description": "Crispy fried pastry filled with spiced onions, a Rajasthan street food favorite.",
+          "image": "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=400&h=300&fit=crop",
+          "location": "Jodhpur, Rajasthan",
+          "lat": 26.2389,
+          "lng": 73.0243
+        },
+        {
+          "id": 2,
+          "title": "Dal Baati Churma",
+          "description": "Traditional Rajasthani dish served on streets, a must-try delicacy.",
+          "image": "https://images.unsplash.com/photo-1562962234-86c5d05c7e3b?w=400&h=300&fit=crop",
+          "location": "Jaipur, Rajasthan",
+          "lat": 26.9124,
+          "lng": 75.7873
+        }
+      ],
+      "Restaurants": [
+        {
+          "id": 1,
+          "title": "Chokhi Dhani",
+          "description": "Authentic Rajasthani thali experience in a traditional village setting.",
+          "image": "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=400&h=300&fit=crop",
+          "location": "Jaipur, Rajasthan",
+          "lat": 26.9124,
+          "lng": 75.7873
+        }
+      ],
+      "Hotels": [
+        {
+          "id": 1,
+          "title": "Heritage Palace Hotels",
+          "description": "Stay in converted palaces offering royal experiences and traditional architecture.",
+          "image": "https://images.unsplash.com/photo-1578683010236-d716f9a3f461?w=400&h=300&fit=crop",
+          "location": "Udaipur, Rajasthan",
+          "lat": 24.5854,
+          "lng": 73.7125
+        }
+      ]
+    },
+    "nature": {
+      "Beaches": [
+        {
+          "id": 1,
+          "title": "Desert Dunes",
+          "description": "Experience the golden sand dunes of the Thar Desert, especially beautiful at sunset.",
+          "image": "https://images.unsplash.com/photo-1518837695005-2083093ee35b?w=400&h=300&fit=crop",
+          "location": "Jaisalmer, Rajasthan",
+          "lat": 26.9157,
+          "lng": 70.9083
+        }
+      ],
+      "Deserts": [
+        {
+          "id": 1,
+          "title": "Thar Desert",
+          "description": "The Great Indian Desert offering camel safaris and stunning desert landscapes.",
+          "image": "https://images.unsplash.com/photo-1509316785289-025f5b846b35?w=400&h=300&fit=crop",
+          "location": "Jaisalmer, Rajasthan",
+          "lat": 26.9157,
+          "lng": 70.9083
+        }
+      ]
+    },
+    "heritage": {
+      "Forts": [
+        {
+          "id": 1,
+          "title": "Mehrangarh Fort",
+          "description": "Massive fort overlooking Jodhpur, one of India's largest and most impressive forts.",
+          "image": "https://images.unsplash.com/photo-1587132137056-bfbf0166836e?w=400&h=300&fit=crop",
+          "location": "Jodhpur, Rajasthan",
+          "lat": 26.2988,
+          "lng": 73.0179
+        },
+        {
+          "id": 2,
+          "title": "Amer Fort",
+          "description": "Magnificent fort palace with intricate architecture and stunning views of Jaipur.",
+          "image": "https://images.unsplash.com/photo-1529586328501-4b86095687e7?w=400&h=300&fit=crop",
+          "location": "Jaipur, Rajasthan",
+          "lat": 26.9855,
+          "lng": 75.8513
+        }
+      ],
+      "Palaces": [
+        {
+          "id": 1,
+          "title": "City Palace",
+          "description": "Royal residence in the heart of Jaipur, showcasing Rajput architecture and artifacts.",
+          "image": "https://images.unsplash.com/photo-1587132137056-bfbf0166836e?w=400&h=300&fit=crop",
+          "location": "Jaipur, Rajasthan",
+          "lat": 26.9255,
+          "lng": 75.8236
+        },
+        {
+          "id": 2,
+          "title": "Lake Palace",
+          "description": "Stunning white marble palace floating on Lake Pichola in Udaipur.",
+          "image": "https://images.unsplash.com/photo-1564501049412-61c2a3083791?w=400&h=300&fit=crop",
+          "location": "Udaipur, Rajasthan",
+          "lat": 24.5760,
+          "lng": 73.6833
+        }
+      ]
+    },
+    "culture": {
+      "Festivals": [
+        {
+          "id": 1,
+          "title": "Pushkar Camel Fair",
+          "description": "World's largest camel fair featuring cultural performances, trading, and festivities.",
+          "image": "https://images.unsplash.com/photo-1516975080664-ed2fc6a32937?w=400&h=300&fit=crop",
+          "location": "Pushkar, Rajasthan",
+          "lat": 26.4897,
+          "lng": 74.5511
+        }
+      ],
+      "Dances": [
+        {
+          "id": 1,
+          "title": "Ghoomar Dance",
+          "description": "Traditional Rajasthani folk dance performed by women in colorful ghaghra-cholis.",
+          "image": "https://images.unsplash.com/photo-1518611012118-696072aa579a?w=400&h=300&fit=crop",
+          "location": "Rajasthan",
+          "lat": 26.5833,
+          "lng": 73.8433
+        }
+      ]
+    },
+    "hiddenGems": {
+      "Secret Destinations": [
+        {
+          "id": 1,
+          "title": "Kumbhalgarh Wildlife Sanctuary",
+          "description": "Off-the-beaten-path sanctuary with ancient fort and diverse wildlife.",
+          "image": "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=400&h=300&fit=crop",
+          "location": "Kumbhalgarh, Rajasthan",
+          "lat": 25.1498,
+          "lng": 73.5767
+        }
+      ]
+    }
+  },
+  "Kerala": {
+    "nature": {
+      "Beaches": [
+        {
+          "id": 1,
+          "title": "Kovalam Beach",
+          "description": "Famous crescent-shaped beach with lighthouse views and calm waters.",
+          "image": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=400&h=300&fit=crop",
+          "location": "Kovalam, Kerala",
+          "lat": 8.3984,
+          "lng": 76.9788
+        }
+      ],
+      "Waterfalls": [
+        {
+          "id": 1,
+          "title": "Athirappilly Falls",
+          "description": "The Niagara of India, a stunning waterfall in the Western Ghats.",
+          "image": "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&h=300&fit=crop",
+          "location": "Thrissur, Kerala",
+          "lat": 10.2833,
+          "lng": 76.5833
+        }
+      ]
+    },
+    "localLife": {
+      "Shopping": [
+        {
+          "id": 1,
+          "title": "Spice Markets",
+          "description": "Discover aromatic spices and traditional Kerala products in local markets.",
+          "image": "https://images.unsplash.com/photo-1590736969955-71cc94901144?w=400&h=300&fit=crop",
+          "location": "Kochi, Kerala",
+          "lat": 9.9312,
+          "lng": 76.2673
+        }
+      ]
+    }
+  },
+  "Goa": {
+    "nature": {
+      "Beaches": [
+        {
+          "id": 1,
+          "title": "Calangute Beach",
+          "description": "Queen of Beaches with golden sand and vibrant beach shacks.",
+          "image": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=400&h=300&fit=crop",
+          "location": "Calangute, Goa",
+          "lat": 15.5439,
+          "lng": 73.7553
+        }
+      ]
+    },
+    "localLife": {
+      "Street Foods": [
+        {
+          "id": 1,
+          "title": "Goan Fish Curry",
+          "description": "Authentic Goan seafood available at beachside shacks and local eateries.",
+          "image": "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=400&h=300&fit=crop",
+          "location": "Goa",
+          "lat": 15.2993,
+          "lng": 74.1240
+        }
+      ]
+    }
+  }
+}
+
+
+
+

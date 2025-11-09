@@ -1,0 +1,230 @@
+[
+  {
+    "id": 1,
+    "name": "Andhra Pradesh",
+    "cardImage": "https://images.unsplash.com/photo-1580477667995-2b94f01c9516?w=400&h=300&fit=crop",
+    "bannerImage": "https://images.unsplash.com/photo-1580477667995-2b94f01c9516?w=1200&h=600&fit=crop",
+    "description": "Southern coastal state of India, known for its beautiful beaches, rich heritage, and vibrant culture. Famous for Tirupati temple and rich Hindu culture.",
+    "spiritualSignificance": "Famous for Tirupati temple and rich Hindu culture"
+  },
+  {
+    "id": 2,
+    "name": "Arunachal Pradesh",
+    "cardImage": "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&h=300&fit=crop",
+    "bannerImage": "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1200&h=600&fit=crop",
+    "description": "Northeastern mountainous state with pristine landscapes and diverse tribal cultures. Known for Tawang Monastery and Buddhist heritage.",
+    "spiritualSignificance": "Known for Tawang Monastery and Buddhist heritage"
+  },
+  {
+    "id": 3,
+    "name": "Assam",
+    "cardImage": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=400&h=300&fit=crop",
+    "bannerImage": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=1200&h=600&fit=crop",
+    "description": "Tea-growing state in northeast India with lush greenery and rich biodiversity. Kamakhya temple and Majuli river island are iconic.",
+    "spiritualSignificance": "Kamakhya temple and Majuli river island"
+  },
+  {
+    "id": 4,
+    "name": "Bihar",
+    "cardImage": "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400&h=300&fit=crop",
+    "bannerImage": "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=1200&h=600&fit=crop",
+    "description": "Northern plains state of India with ancient history and spiritual significance. Home to Nalanda University, Bodh Gaya, and Mahabodhi Temple.",
+    "spiritualSignificance": "Nalanda University, Bodh Gaya, Mahabodhi Temple"
+  },
+  {
+    "id": 5,
+    "name": "Chhattisgarh",
+    "cardImage": "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=400&h=300&fit=crop",
+    "bannerImage": "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=1200&h=600&fit=crop",
+    "description": "Central Indian state with forests and rivers. Famous for Chitrakoot Falls and ancient temples.",
+    "spiritualSignificance": "Famous for Chitrakoot Falls and ancient temples"
+  },
+  {
+    "id": 6,
+    "name": "Goa",
+    "cardImage": "https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=400&h=300&fit=crop",
+    "bannerImage": "https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=1200&h=600&fit=crop",
+    "description": "Small coastal state in western India known for its beaches, nightlife, and Portuguese heritage. Churches, temples, and spiritual festivals.",
+    "spiritualSignificance": "Known for churches, temples, and spiritual festivals"
+  },
+  {
+    "id": 7,
+    "name": "Gujarat",
+    "cardImage": "https://images.unsplash.com/photo-1539650116574-75c0c6d73a6e?w=400&h=300&fit=crop",
+    "bannerImage": "https://images.unsplash.com/photo-1539650116574-75c0c6d73a6e?w=1200&h=600&fit=crop",
+    "description": "Western state of India with vibrant culture and rich heritage. Dwarka, Somnath temple, and rich Vedic heritage.",
+    "spiritualSignificance": "Dwarka, Somnath temple, rich Vedic heritage"
+  },
+  {
+    "id": 8,
+    "name": "Haryana",
+    "cardImage": "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400&h=300&fit=crop",
+    "bannerImage": "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=1200&h=600&fit=crop",
+    "description": "Northern state surrounding Delhi with agricultural landscapes and historical significance. Kurukshetra, sacred land of Mahabharata.",
+    "spiritualSignificance": "Kurukshetra, sacred land of Mahabharata"
+  },
+  {
+    "id": 9,
+    "name": "Himachal Pradesh",
+    "cardImage": "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&h=300&fit=crop",
+    "bannerImage": "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1200&h=600&fit=crop",
+    "description": "Himalayan state in north India with breathtaking mountain views and cool climate. Temples in Kullu, Manali, and sacred mountains.",
+    "spiritualSignificance": "Temples in Kullu, Manali, sacred mountains"
+  },
+  {
+    "id": 10,
+    "name": "Jharkhand",
+    "cardImage": "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=400&h=300&fit=crop",
+    "bannerImage": "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=1200&h=600&fit=crop",
+    "description": "Eastern state with forests and tribal heritage. Baidyanath Dham temple and spiritual retreats.",
+    "spiritualSignificance": "Baidyanath Dham temple, spiritual retreats"
+  },
+  {
+    "id": 11,
+    "name": "Karnataka",
+    "cardImage": "https://images.unsplash.com/photo-1580477667995-2b94f01c9516?w=400&h=300&fit=crop",
+    "bannerImage": "https://images.unsplash.com/photo-1580477667995-2b94f01c9516?w=1200&h=600&fit=crop",
+    "description": "Southern state with rich culture and heritage. Mysore Palace, Hampi temples, and sacred rivers.",
+    "spiritualSignificance": "Mysore Palace, Hampi temples, sacred rivers"
+  },
+  {
+    "id": 12,
+    "name": "Kerala",
+    "cardImage": "https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=400&h=300&fit=crop",
+    "bannerImage": "https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=1200&h=600&fit=crop",
+    "description": "Southern coastal state known as God's Own Country. Sabarimala, backwaters, and ancient temples.",
+    "spiritualSignificance": "Sabarimala, backwaters, ancient temples"
+  },
+  {
+    "id": 13,
+    "name": "Madhya Pradesh",
+    "cardImage": "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400&h=300&fit=crop",
+    "bannerImage": "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=1200&h=600&fit=crop",
+    "description": "Central Indian state with historical monuments and wildlife. Khajuraho temples, Omkareshwar, and spiritual heritage.",
+    "spiritualSignificance": "Khajuraho temples, Omkareshwar, spiritual heritage"
+  },
+  {
+    "id": 14,
+    "name": "Maharashtra",
+    "cardImage": "https://images.unsplash.com/photo-1539650116574-75c0c6d73a6e?w=400&h=300&fit=crop",
+    "bannerImage": "https://images.unsplash.com/photo-1539650116574-75c0c6d73a6e?w=1200&h=600&fit=crop",
+    "description": "Western state of India with bustling cities and historic sites. Shirdi, Trimbakeshwar, and Bhimashankar temples.",
+    "spiritualSignificance": "Shirdi, Trimbakeshwar, Bhimashankar temples"
+  },
+  {
+    "id": 15,
+    "name": "Manipur",
+    "cardImage": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=400&h=300&fit=crop",
+    "bannerImage": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=1200&h=600&fit=crop",
+    "description": "Northeast India state with pristine lakes and unique culture. Sacred forests and local temples.",
+    "spiritualSignificance": "Sacred forests and local temples"
+  },
+  {
+    "id": 16,
+    "name": "Meghalaya",
+    "cardImage": "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&h=300&fit=crop",
+    "bannerImage": "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1200&h=600&fit=crop",
+    "description": "Northeastern hill state known as the abode of clouds. Sacred groves and spiritual landscapes.",
+    "spiritualSignificance": "Sacred groves and spiritual landscapes"
+  },
+  {
+    "id": 17,
+    "name": "Mizoram",
+    "cardImage": "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&h=300&fit=crop",
+    "bannerImage": "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1200&h=600&fit=crop",
+    "description": "Northeastern hilly state with scenic beauty. Tribal spiritual heritage and natural sacred sites.",
+    "spiritualSignificance": "Tribal spiritual heritage and natural sacred sites"
+  },
+  {
+    "id": 18,
+    "name": "Nagaland",
+    "cardImage": "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&h=300&fit=crop",
+    "bannerImage": "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1200&h=600&fit=crop",
+    "description": "Northeast India with hills and tribal culture. Local sacred sites and tribal religious practices.",
+    "spiritualSignificance": "Local sacred sites and tribal religious practices"
+  },
+  {
+    "id": 19,
+    "name": "Odisha",
+    "cardImage": "https://images.unsplash.com/photo-1580477667995-2b94f01c9516?w=400&h=300&fit=crop",
+    "bannerImage": "https://images.unsplash.com/photo-1580477667995-2b94f01c9516?w=1200&h=600&fit=crop",
+    "description": "Eastern coastal state with rich cultural heritage. Jagannath Puri, Konark Sun Temple, and holy rivers.",
+    "spiritualSignificance": "Jagannath Puri, Konark Sun Temple, holy rivers"
+  },
+  {
+    "id": 20,
+    "name": "Punjab",
+    "cardImage": "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400&h=300&fit=crop",
+    "bannerImage": "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=1200&h=600&fit=crop",
+    "description": "Northern state of India with fertile plains and vibrant culture. Golden Temple and Sikh spiritual center.",
+    "spiritualSignificance": "Golden Temple, Sikh spiritual center"
+  },
+  {
+    "id": 21,
+    "name": "Rajasthan",
+    "cardImage": "https://images.unsplash.com/photo-1539650116574-75c0c6d73a6e?w=400&h=300&fit=crop",
+    "bannerImage": "https://images.unsplash.com/photo-1539650116574-75c0c6d73a6e?w=1200&h=600&fit=crop",
+    "description": "Western desert state with royal palaces and forts. Temples in Jaipur, Pushkar, and sacred forts.",
+    "spiritualSignificance": "Temples in Jaipur, Pushkar, sacred forts"
+  },
+  {
+    "id": 22,
+    "name": "Sikkim",
+    "cardImage": "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&h=300&fit=crop",
+    "bannerImage": "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1200&h=600&fit=crop",
+    "description": "Northeast Himalayan state with stunning mountain views. Rumtek Monastery, sacred mountains and lakes.",
+    "spiritualSignificance": "Rumtek Monastery, sacred mountains and lakes"
+  },
+  {
+    "id": 23,
+    "name": "Tamil Nadu",
+    "cardImage": "https://images.unsplash.com/photo-1580477667995-2b94f01c9516?w=400&h=300&fit=crop",
+    "bannerImage": "https://images.unsplash.com/photo-1580477667995-2b94f01c9516?w=1200&h=600&fit=crop",
+    "description": "Southern coastal state with ancient Dravidian architecture. Meenakshi Temple, Rameswaram, and sacred pilgrimage sites.",
+    "spiritualSignificance": "Meenakshi Temple, Rameswaram, sacred pilgrimage sites"
+  },
+  {
+    "id": 24,
+    "name": "Telangana",
+    "cardImage": "https://images.unsplash.com/photo-1580477667995-2b94f01c9516?w=400&h=300&fit=crop",
+    "bannerImage": "https://images.unsplash.com/photo-1580477667995-2b94f01c9516?w=1200&h=600&fit=crop",
+    "description": "Southern state in India with modern cities and heritage. Bhadrachalam temple and rich spiritual traditions.",
+    "spiritualSignificance": "Bhadrachalam temple, rich spiritual traditions"
+  },
+  {
+    "id": 25,
+    "name": "Tripura",
+    "cardImage": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=400&h=300&fit=crop",
+    "bannerImage": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=1200&h=600&fit=crop",
+    "description": "Northeast India state with royal palaces and temples. Ancient temples and sacred groves.",
+    "spiritualSignificance": "Ancient temples and sacred groves"
+  },
+  {
+    "id": 26,
+    "name": "Uttar Pradesh",
+    "cardImage": "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400&h=300&fit=crop",
+    "bannerImage": "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=1200&h=600&fit=crop",
+    "description": "Northern plains state with rich history and spiritual significance. Kashi, Varanasi ghats, and Ayodhya spiritual sites.",
+    "spiritualSignificance": "Kashi, Varanasi ghats, Ayodhya spiritual sites"
+  },
+  {
+    "id": 27,
+    "name": "Uttarakhand",
+    "cardImage": "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&h=300&fit=crop",
+    "bannerImage": "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1200&h=600&fit=crop",
+    "description": "Northern Himalayan state known as Dev Bhoomi. Haridwar, Rishikesh, and Char Dham temples.",
+    "spiritualSignificance": "Haridwar, Rishikesh, Char Dham temples"
+  },
+  {
+    "id": 28,
+    "name": "West Bengal",
+    "cardImage": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=400&h=300&fit=crop",
+    "bannerImage": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=1200&h=600&fit=crop",
+    "description": "Eastern state of India with rich cultural heritage. Kalighat temple, Dakshineswar, and spiritual rivers.",
+    "spiritualSignificance": "Kalighat temple, Dakshineswar, spiritual rivers"
+  }
+]
+
+
+
+

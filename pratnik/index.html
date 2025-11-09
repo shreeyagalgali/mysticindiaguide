@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The Lost Temple - Pyodide Text Adventure</title>
+    <!-- Tailwind CSS (optional, for simple clean styling) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Pyodide loader -->
+    <script src="https://cdn.jsdelivr.net/pyodide/v0.24.1/full/pyodide.js"></script>
+    <style>
+      /* Simple fade-in for smooth text updates */
+      .fade-enter { opacity: 0; }
+      .fade-enter-active { opacity: 1; transition: opacity 200ms ease-in; }
+    </style>
+  </head>
+  <body class="min-h-screen bg-slate-50 text-slate-800">
+    <div class="max-w-3xl mx-auto px-4 py-10">
+      <header class="mb-6">
+        <h1 class="text-3xl font-bold tracking-tight">The Lost Temple</h1>
+        <p class="text-slate-600">A browser text adventure powered by Python (Pyodide)</p>
+      </header>
+
+      <main class="bg-white shadow rounded-lg p-6">
+        <div id="story" class="min-h-[140px] text-lg leading-relaxed"></div>
+        <div id="choices" class="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-3"></div>
+        <div class="mt-8 flex items-center gap-3">
+          <button id="restartBtn" class="inline-flex items-center justify-center rounded-md bg-slate-800 px-4 py-2 text-white hover:bg-slate-700 disabled:opacity-50">Restart</button>
+          <span id="status" class="text-sm text-slate-500"></span>
+        </div>
+      </main>
+
+      <footer class="mt-10 text-xs text-slate-500">
+        <p>
+          This demo runs Python entirely in your browser using Pyodide. You can extend the
+          story by editing the Python state machine in this page.
+        </p>
+      </footer>
+    </div>
+
+    <script>
+      // --- Initialization ---
+      const storyEl = document.getElementById("story");
+      const choicesEl = document.getElementById("choices");
+      const statusEl = document.getElementById("status");
+      const restartBtn = document.getElementById("restartBtn");
+
+      let pyodide = null;
+      let api_get_view = null;
+      let api_choose = null;
+      let api_restart = null;
+
+      // Minimal utility for smooth text updates
+      function setStory(html) {
+        storyEl.classList.remove("fade-enter-active");
+        storyEl.classList.add("fade-enter");
+        storyEl.innerHTML = html;
+        // force reflow
+        void storyEl.offsetWidth;
+        storyEl.classList.remove("fade-enter");
+        storyEl.classList.add("fade-enter-active");
+      }
+
+      function setStatus(msg) {
+        statusEl.textContent = msg || "";
+      }
+
+      function render(view) {
+        // view: { title, text, options: [{id, label}], is_ending }
+        const titleHtml = `<div class="font-semibold text-slate-700 mb-1">${view.title}</div>`;
+        const textHtml = `<div>${view.text}</div>`;
+        setStory(titleHtml + textHtml);
+
+        choicesEl.innerHTML = "";
+        if (Array.isArray(view.options)) {
+          for (const opt of view.options) {
+            const btn = document.createElement("button");
+            btn.className = "rounded-md border border-slate-300 px-4 py-2 text-left hover:bg-slate-50";
+            btn.textContent = opt.label;
+            btn.addEventListener("click", async () => {
+              try {
+                setStatus("Processing choice...");
+                const nextView = await api_choose(opt.id);
+                render(nextView);
+                setStatus("");
+              } catch (e) {
+                console.error(e);
+                setStatus("Error applying choice");
+              }
+            });
+            choicesEl.appendChild(btn);
+          }
+        }
+
+        // Disable restart if still at start to avoid confusion
+        restartBtn.disabled = false;
+      }
+
+      restartBtn.addEventListener("click", async () => {
+        try {
+          setStatus("Restarting...");
+          const view = await api_restart();
+          render(view);
+          setStatus("");
+        } catch (e) {
+          console.error(e);
+          setStatus("Error restarting");
+        }
+      });
+
+      // --- Python source: Text Adventure Engine ---
+      // The Python code below defines a minimal, extendable state machine.
+      // To add a new branch:
+      // 1) Add a new state entry in NODES with its text and options.
+      // 2) Add transitions in TRANSITIONS mapping (state, option_id) -> new_state.
+      // 3) Option labels are shown on buttons.
+      const PY_SOURCE = `
+from dataclasses import dataclass
+from typing import List, Dict, Optional
+
+
+@dataclass
+class Option:
+    id: str
+    label: str
+
+
+@dataclass
+class View:
+    title: str
+    text: str
+    options: List[Option]
+    is_ending: bool = False
+
+
+class Game:
+    """
+    The game is modeled as a state machine.
+    - NODES: maps state -> narrative text and possible options
+    - TRANSITIONS: maps (state, option_id) -> next_state
+
+    To extend: add states and transitions below. Ensure end states have no options
+    and set is_ending=True in get_view.
+    """
+
+    def __init__(self) -> None:
+        self.state: str = "start"
+
+        self.NODES: Dict[str, Dict] = {
+            # Start
+            "start": {
+                "title": "The Lost Temple",
+                "text": (
+                    "You wake to the hum of insects and the distant roar of water. "
+                    "Vines curtain an ancient stone doorway—the temple. To your right, the jungle deepens."
+                ),
+                "options": [
+                    {"id": "enter_temple", "label": "Enter the temple"},
+                    {"id": "explore_forest", "label": "Explore the forest"},
+                ],
+            },
+
+            # Temple branch
+            "temple_hall": {
+                "title": "Shadowed Hall",
+                "text": (
+                    "Inside, the air is cool. A long hall stretches ahead with faint carvings. "
+                    "You notice floor plates and thin slits along the walls—traps."
+                ),
+                "options": [
+                    {"id": "dodge_forward", "label": "Dash forward, dodging plates"},
+                    {"id": "inspect_mechanism", "label": "Inspect the trap mechanism"},
+                ],
+            },
+            "temple_chamber": {
+                "title": "Hidden Chamber",
+                "text": (
+                    "You slip past the traps and enter a chamber lit by a shaft of light. "
+                    "On a pedestal lies a stone idol with emerald eyes."
+                ),
+                "options": [
+                    {"id": "take_idol", "label": "Take the idol"},
+                    {"id": "leave_idol", "label": "Leave it and look around"},
+                ],
+            },
+            "temple_collapse": {
+                "title": "Collapse",
+                "text": (
+                    "The mechanism screams. Stones grind. The hall collapses behind you. "
+                    "Dust fills your lungs as you stumble toward a glimmer of light..."
+                ),
+                "options": [
+                    {"id": "push_on", "label": "Push toward the light"},
+                ],
+            },
+
+            # Forest branch
+            "forest_path": {
+                "title": "The Guide",
+                "text": (
+                    "The jungle thickens until a figure appears—a traveler with a bone necklace. "
+                    '\"The temple hears footsteps,\" they whisper. \"Do you seek treasure or answers?\"'
+                ),
+                "options": [
+                    {"id": "trust_guide", "label": "Trust the guide"},
+                    {"id": "ignore_guide", "label": "Ignore and find your own way"},
+                ],
+            },
+            "forest_clearing": {
+                "title": "Echoing Clearing",
+                "text": (
+                    "The guide leads you to a clearing aligned with the temple's sun shaft. "
+                    "Symbols underfoot vibrate softly."
+                ),
+                "options": [
+                    {"id": "chant_symbols", "label": "Chant the symbols with the guide"},
+                    {"id": "step_center", "label": "Step to the center alone"},
+                ],
+            },
+
+            # Endings (is_ending=True)
+            "ending_treasure": {
+                "title": "Emerald Dawn",
+                "text": (
+                    "With a gentle click, a hidden door opens to a sunlit vault. "
+                    "You find maps and relics—the true treasure is knowledge to protect the site."
+                ),
+                "options": [],
+            },
+            "ending_cursed": {
+                "title": "Cursed Idol",
+                "text": (
+                    "The idol's eyes flare. Your vision doubles. The jungle twists endlessly. "
+                    "You walk in circles as night falls—lost to the temple's will."
+                ),
+                "options": [],
+            },
+            "ending_escape": {
+                "title": "Breath of Daylight",
+                "text": (
+                    "You burst from a side fissure as the temple groans. You live, but the secret sleeps on."
+                ),
+                "options": [],
+            },
+            "ending_lost": {
+                "title": "Labyrinth of Green",
+                "text": (
+                    "Vines knit behind you. Paths repeat. The jungle hum grows louder. "
+                    "Somewhere, a door closed."
+                ),
+                "options": [],
+            },
+        }
+
+        # (state, option_id) -> next_state
+        self.TRANSITIONS: Dict[str, Dict[str, str]] = {
+            "start": {
+                "enter_temple": "temple_hall",
+                "explore_forest": "forest_path",
+            },
+            "temple_hall": {
+                "dodge_forward": "temple_chamber",
+                "inspect_mechanism": "temple_collapse",
+            },
+            "temple_chamber": {
+                "take_idol": "ending_cursed",
+                "leave_idol": "ending_treasure",
+            },
+            "temple_collapse": {
+                "push_on": "ending_escape",
+            },
+            "forest_path": {
+                "trust_guide": "forest_clearing",
+                "ignore_guide": "ending_lost",
+            },
+            "forest_clearing": {
+                "chant_symbols": "ending_treasure",
+                "step_center": "ending_cursed",
+            },
+        }
+
+    def is_ending_state(self, state: str) -> bool:
+        return state.startswith("ending_")
+
+    def get_view(self) -> View:
+        node = self.NODES[self.state]
+        options = [Option(**o) for o in node.get("options", [])]
+        return View(
+            title=node.get("title", ""),
+            text=node.get("text", ""),
+            options=options,
+            is_ending=self.is_ending_state(self.state),
+        )
+
+    def choose(self, option_id: str) -> View:
+        # Guard endings: no further transitions
+        if self.is_ending_state(self.state):
+            return self.get_view()
+
+        next_state = self.TRANSITIONS.get(self.state, {}).get(option_id)
+        if not next_state:
+            # Invalid option: return same view (could raise in stricter builds)
+            return self.get_view()
+        self.state = next_state
+        return self.get_view()
+
+    def restart(self) -> View:
+        self.state = "start"
+        return self.get_view()
+
+
+# Singleton game instance for the page
+game = Game()
+
+
+def serialize_view(view: View) -> dict:
+    return {
+        "title": view.title,
+        "text": view.text,
+        "options": [{"id": o.id, "label": o.label} for o in view.options],
+        "is_ending": view.is_ending,
+    }
+
+
+def api_get_view() -> dict:
+    """Return the current view as a plain dict (JS-friendly)."""
+    return serialize_view(game.get_view())
+
+
+def api_choose(option_id: str) -> dict:
+    """Apply a choice and return the new view as a dict."""
+    return serialize_view(game.choose(option_id))
+
+
+def api_restart() -> dict:
+    """Restart the game and return the initial view as a dict."""
+    return serialize_view(game.restart())
+`;
+
+      // --- Boot sequence: load Pyodide, eval Python, and bridge APIs ---
+      async function boot() {
+        setStatus("Loading Python runtime...");
+        pyodide = await loadPyodide({ indexURL: "https://cdn.jsdelivr.net/pyodide/v0.24.1/full/" });
+
+        setStatus("Initializing game...");
+        await pyodide.runPythonAsync(PY_SOURCE);
+
+        const globals = pyodide.globals;
+        const py_api_get_view = globals.get("api_get_view");
+        const py_api_choose = globals.get("api_choose");
+        const py_api_restart = globals.get("api_restart");
+
+        // Wrap in JS-friendly async functions returning plain objects
+        api_get_view = async () => {
+          const result = py_api_get_view();
+          const js = result.toJs({ dict_converter: Object.fromEntries });
+          result.destroy?.();
+          return js;
+        };
+
+        api_choose = async (optionId) => {
+          const result = py_api_choose(optionId);
+          const js = result.toJs({ dict_converter: Object.fromEntries });
+          result.destroy?.();
+          return js;
+        };
+
+        api_restart = async () => {
+          const result = py_api_restart();
+          const js = result.toJs({ dict_converter: Object.fromEntries });
+          result.destroy?.();
+          return js;
+        };
+
+        const initialView = await api_get_view();
+        render(initialView);
+        setStatus("");
+      }
+
+      boot().catch((e) => {
+        console.error(e);
+        setStatus("Failed to load Pyodide. Check console for details.");
+      });
+    </script>
+  </body>
+  </html>
+
+

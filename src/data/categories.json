@@ -1,0 +1,56 @@
+{
+  "nature": {
+    "name": "Nature",
+    "icon": "🌿",
+    "subcategories": [
+      "Beaches",
+      "Forests",
+      "Hills",
+      "Waterfalls",
+      "Deserts"
+    ]
+  },
+  "heritage": {
+    "name": "Heritage",
+    "icon": "🏰",
+    "subcategories": [
+      "Monuments",
+      "Forts",
+      "Palaces",
+      "Museums"
+    ]
+  },
+  "culture": {
+    "name": "Culture",
+    "icon": "🎭",
+    "subcategories": [
+      "Dances",
+      "Festivals",
+      "Handicrafts",
+      "Cuisines"
+    ]
+  },
+  "localLife": {
+    "name": "Local Life",
+    "icon": "🧵",
+    "subcategories": [
+      "Shopping",
+      "Street Foods",
+      "Restaurants",
+      "Hotels"
+    ]
+  },
+  "hiddenGems": {
+    "name": "Hidden Gems",
+    "icon": "💎",
+    "subcategories": [
+      "Unexplored Spots",
+      "Insta-famous Places",
+      "Secret Destinations"
+    ]
+  }
+}
+
+
+
+
